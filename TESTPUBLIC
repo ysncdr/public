@@ -1,0 +1,135 @@
+// This source code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// © traderyasinn
+
+//@version=5
+indicator("My script DENEMEMEE")
+
+
+RSI_Lenght = input.int(20, "RSI Uzunluk")
+
+
+RSI_Tester (sembol, frametime) =>
+
+    rsi_function = request.security(sembol, frametime, ta.rsi(close, RSI_Lenght))
+
+
+
+
+
+s01 = "OANDA:AUDCAD"
+s02 = "OANDA:AUDCHF"
+s03 = "OANDA:AUDJPY"
+s04 = "OANDA:AUDNZD"
+s05 = "OANDA:AUDUSD"
+s06 = "OANDA:CADCHF"
+s07 = "OANDA:CADJPY"
+s08 = "OANDA:CHFJPY"
+s09 = "OANDA:EURAUD"
+s10 = "OANDA:EURCAD"
+s11 = "OANDA:EURCHF"
+s12 = "OANDA:EURGBP"
+s13 = "OANDA:EURJPY"
+s14 = "OANDA:EURNZD"
+s15 = "OANDA:EURUSD"
+s16 = "OANDA:GBPAUD"
+s17 = "OANDA:GBPCAD"
+s18 = "OANDA:GBPCHF"
+s19 = "OANDA:GBPJPY"
+s20 = "OANDA:GBPNZD"
+s21 = "OANDA:GBPUSD"
+s22 = "OANDA:NZDCAD"
+s23 = "OANDA:NZDCHF"
+s24 = "OANDA:NZDJPY"
+s25 = "OANDA:NZDUSD"
+s26 = "OANDA:USDCAD"
+s27 = "OANDA:USDCHF"
+s28 = "OANDA:USDJPY"
+s29 = "OANDA:USDNOK"
+s30 = "OANDA:USDDKK"
+s31 = "OANDA:EURTRY"
+s32 = "OANDA:USDTRY"
+
+a01 = array.new_float(4)
+a02 = array.new_float(4)
+a03 = array.new_float(4)
+a04 = array.new_float(4)
+a05 = array.new_float(4)
+a06 = array.new_float(4)
+a07 = array.new_float(4)
+a08 = array.new_float(4)
+a09 = array.new_float(4)
+a10 = array.new_float(4)
+a11 = array.new_float(4)
+a12 = array.new_float(4)
+a13 = array.new_float(4)
+a14 = array.new_float(4)
+a15 = array.new_float(4)
+a16 = array.new_float(4)
+a17 = array.new_float(4)
+a18 = array.new_float(4)
+a19 = array.new_float(4)
+a20 = array.new_float(4)
+a21 = array.new_float(4)
+a22 = array.new_float(4)
+a23 = array.new_float(4)
+a24 = array.new_float(4)
+a25 = array.new_float(4)
+a26 = array.new_float(4)
+a27 = array.new_float(4)
+a28 = array.new_float(4)
+a29 = array.new_float(4)
+a30 = array.new_float(4)
+a31 = array.new_float(4)
+a32 = array.new_float(4)
+
+
+
+
+for i = 0 to 3 by 1
+    z = ""
+    switch i
+        0 => z := "60"
+        1 => z := "D"
+        2 => z := "W"
+        3 => z := "M"
+
+    array.set(a01, i, RSI_Tester(s01, z))
+    array.set(a02, i, RSI_Tester(s02, z))
+    array.set(a03, i, RSI_Tester(s03, z))
+    array.set(a04, i, RSI_Tester(s04, z))
+    array.set(a05, i, RSI_Tester(s05, z))
+    array.set(a06, i, RSI_Tester(s06, z))
+    array.set(a07, i, RSI_Tester(s07, z))
+    array.set(a08, i, RSI_Tester(s08, z))
+    array.set(a09, i, RSI_Tester(s09, z))
+    array.set(a10, i, RSI_Tester(s10, z))
+    array.set(a11, i, RSI_Tester(s11, z))
+    array.set(a12, i, RSI_Tester(s12, z))
+    array.set(a13, i, RSI_Tester(s13, z))
+    array.set(a14, i, RSI_Tester(s14, z))
+    array.set(a15, i, RSI_Tester(s15, z))
+    array.set(a16, i, RSI_Tester(s16, z))
+    array.set(a17, i, RSI_Tester(s17, z))
+    array.set(a18, i, RSI_Tester(s18, z))
+    array.set(a19, i, RSI_Tester(s19, z))
+    array.set(a20, i, RSI_Tester(s20, z))
+    array.set(a21, i, RSI_Tester(s21, z))
+    array.set(a22, i, RSI_Tester(s22, z))
+    array.set(a23, i, RSI_Tester(s23, z))
+    array.set(a24, i, RSI_Tester(s24, z))
+    array.set(a25, i, RSI_Tester(s25, z))
+    array.set(a26, i, RSI_Tester(s26, z))
+    array.set(a27, i, RSI_Tester(s27, z))
+    array.set(a28, i, RSI_Tester(s28, z))
+    array.set(a29, i, RSI_Tester(s29, z))
+    array.set(a30, i, RSI_Tester(s30, z))
+    array.set(a31, i, RSI_Tester(s31, z))
+    array.set(a32, i, RSI_Tester(s32, z))
+    
+
+//plot sadece test amaçlıdır, asıl amacım yukarıdaki arraylerin oluşmasıdır,
+//RSI 0 ile 100 arasında bir float verir. 4 farklı zaman diliminin RSI hesabının arraylere atanmasını istiyorum.
+//Pinescript en fazla 40 security request'e izin veriyor. Loop ile bu kuralın etrafında dönmek istiyorum, çünkü Ürettiğim bool değerleri ile söz konusu security requestleri 4 eşit parçaya bölebilmekteydim. 
+
+plot(array.get(a01, 0))
+
